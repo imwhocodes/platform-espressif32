@@ -32,7 +32,7 @@ IS_WINDOWS = sys.platform.startswith("win")
 class Esp32ExceptionDecoder(DeviceMonitorFilterBase):
     NAME = "esp32_exception_decoder"
 
-    ADDR_PATTERN = re.compile(r"((?:0x[0-9a-fA-F]{8}[: ]?)+)\s?(?:\|<-[A-Z]+)?$")
+    ADDR_PATTERN = re.compile(r"Backtrace: ((?:0x[0-9a-fA-F]{8}[: ]?)+)(?:\|<-[A-Z]+)?\s?$")
     ADDR_SPLIT = re.compile(r"[ :]")
     PREFIX_RE = re.compile(r"^ *")
 
